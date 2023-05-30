@@ -20,14 +20,17 @@ function App() {
     const [nameInput, setNameInput] = useState('');
 
     const handleNewName = () => {
+// changing Luke to whatever we type in:
         setName(nameInput);
+// clearing input after submit
+        setNameInput(''); 
     };
 
 // RENDER COMPONENT:
     return (
         <div className="App">
             <p>Hello! My name is {name}.</p>
-            <input placeholder='enter name' onChange={(event) => setNameInput(event.target.value)}/>
+            <input value={nameInput} placeholder='enter name' onChange={(event) => setNameInput(event.target.value)}/>
             <button onClick = {handleNewName}>Submit</button>
             <Clicker />
             <Clicker />
